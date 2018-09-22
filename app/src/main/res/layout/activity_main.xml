@@ -1,9 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-</RelativeLayout>
+    <TableRow>
+
+        <TextView android:id="@+id/txtOperacao" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView android:id="@+id/txtResultado" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/btn7"
+            android:text="7" />
+
+        <Button
+            android:id="@+id/btn8"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btn9"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/btnDivisao"
+            android:text="/" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/btn4"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/btnMultiplicacao"
+            android:text="X" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/btn1"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:text="3" />
+
+        <Button
+            android:id="@+id/btnSubtracao"
+            android:text="-" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/btnVirgula"
+            android:text="," />
+
+        <Button
+            android:id="@+id/btn0"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btnIgualdade"
+            android:text="=" />
+
+        <Button
+            android:id="@+id/btnSoma"
+            android:text="+" />
+    </TableRow>
+
+</TableLayout>
