@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -22,24 +23,34 @@ public class MainActivity extends Activity {
         TextView resultado = (TextView) findViewById(R.id.txtResultado);
         String txtNumero = botaoPressionado.getText().toString();
         String txtConcatenar = resultado.getText().toString();
-        resultado.setText(txtConcatenar + txtNumero);
+        if (txtNumero.contains(".") && resultado.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Digite um número antes!", Toast.LENGTH_LONG).show();
+        } else {
+            resultado.setText(txtConcatenar + txtNumero);
+        }
     }
 
     public void limpar(View v) {
+        TextView operacao = (TextView) findViewById(R.id.txtOperacao);
         TextView resultado = (TextView) findViewById(R.id.txtResultado);
+
+        operacao.setText("");
+        resultado.setText("");
     }
 
     public void pressionarOperacao(View v) {
+
         Button botaoPressionado = (Button) findViewById(v.getId());
 
         TextView operacao = (TextView) findViewById(R.id.txtOperacao);
         TextView resultado = (TextView) findViewById(R.id.txtResultado);
 
-        String calcular = operacao.getText().toString();
+        String txtOperacao = operacao.getText().toString();
+        String txtResultado = resultado.getText().toString();
 
-        if (TextUtils.isEmpty(calcular)) {
-            resultado.setText(calcular + botaoPressionado.getText().toString());
-            operacao.setText("");
+        if (!TextUtils.isEmpty(txtResultado)) {
+            operacao.setText(txtResultado + " " + botaoPressionado.getText().toString());
+            resultado.setText("");
         }
     }
 
@@ -53,9 +64,9 @@ public class MainActivity extends Activity {
 
         if (!TextUtils.isEmpty(txtOperacao) && !TextUtils.isEmpty(txtResultado) && !txtOperacao.contains("=")) {
 
-            operacao.setText(txtOperacao + txtResultado + "=");
-            double valor1 = Double.parseDouble(txtResultado);
-            double valor2 = Double.parseDouble(txtOperacao.substring(0, txtOperacao.length() - 1));
+            operacao.setText(txtOperacao + " " + txtResultado + " = ");
+            double valor1 = Double.parseDouble(txtOperacao.substring(0, txtOperacao.length() - 1));
+            double valor2 = Double.parseDouble(txtResultado);
             double valorResultado = 0;
 
             switch (txtOperacao.substring(txtOperacao.length() - 1, txtOperacao.length())) {
@@ -68,15 +79,18 @@ public class MainActivity extends Activity {
                     break;
 
                 case "/":
-                    valorResultado = valor1 / valor2;
+                    if (valor2 == 0) {
+                        Toast.makeText(this, "Impossível divir por zero!", Toast.LENGTH_SHORT).show();
+                        operacao.setText("");
+                        resultado.setText("");
+                        return;
+                    } else {
+                        valorResultado = valor1 / valor2;
+                    }
                     break;
 
                 case "*":
-                    if (valor2 == 0) {
-                        valorResultado = 0;
-                    } else {
-                        valorResultado = valor1 * valor2;
-                    }
+                    valorResultado = valor1 * valor2;
                     break;
             }
             String txtResultadoCalculo = String.valueOf(valorResultado);

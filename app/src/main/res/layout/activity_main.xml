@@ -6,116 +6,141 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TableRow>
+    <TextView
+        android:id="@+id/txtOperacao"
+        android:layout_width="match_parent"
+        android:height="50dp"
+        android:textColor="@android:color/secondary_text_light"
+        android:textSize="40sp" />
 
-        <TextView
-            android:id="@+id/txtOperacao"
-            android:height="50dp" />
-    </TableRow>
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="match_parent"
+        android:height="100dp"
+        android:textAlignment="textEnd"
+        android:textAllCaps="false"
+        android:textColor="@android:color/primary_text_light"
+        android:textSize="80sp" />
 
-    <TableRow>
 
-        <TextView
-            android:id="@+id/txtResultado"
-            android:height="100dp" />
-    </TableRow>
+    <Button
+        android:id="@+id/btnLimpar"
+        android:layout_width="match_parent"
+        android:backgroundTint="@android:color/darker_gray"
+        android:onClick="limpar"
+        android:text="Limpar" />
 
-    <TableRow>
 
-        <Button
-            android:id="@+id/btnLimpar"
-            android:layout_height="match_parent"
-            android:text="Limpar" />
-    </TableRow>
-
-    <TableRow>
+    <TableRow
+        android:minHeight="75dp"
+        android:textAlignment="center">
 
         <Button
             android:id="@+id/btn7"
+            android:layout_height="match_parent"
             android:onClick="pressionarNumero"
             android:text="7" />
 
         <Button
             android:id="@+id/btn8"
+            android:layout_height="match_parent"
             android:onClick="pressionarNumero"
             android:text="8" />
 
         <Button
             android:id="@+id/btn9"
+            android:layout_height="match_parent"
             android:onClick="pressionarNumero"
             android:text="9" />
 
         <Button
             android:id="@+id/btnDivisao"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/holo_blue_dark"
             android:onClick="pressionarOperacao"
             android:text="/" />
     </TableRow>
 
-    <TableRow>
+    <TableRow android:minHeight="75dp">
 
         <Button
             android:id="@+id/btn4"
+            android:layout_height="match_parent"
             android:onClick="pressionarNumero"
             android:text="4" />
 
         <Button
             android:id="@+id/btn5"
+            android:layout_height="match_parent"
             android:onClick="pressionarNumero"
             android:text="5" />
 
         <Button
             android:id="@+id/btn6"
+            android:layout_height="match_parent"
             android:onClick="pressionarNumero"
             android:text="6" />
 
         <Button
             android:id="@+id/btnMultiplicacao"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/holo_blue_dark"
             android:onClick="pressionarOperacao"
             android:text="*" />
     </TableRow>
 
-    <TableRow>
+    <TableRow android:minHeight="75dp">
 
         <Button
             android:id="@+id/btn1"
+            android:layout_height="match_parent"
             android:onClick="pressionarNumero"
             android:text="1" />
 
         <Button
             android:id="@+id/btn2"
+            android:layout_height="match_parent"
             android:onClick="pressionarNumero"
             android:text="2" />
 
         <Button
             android:id="@+id/btn3"
+            android:layout_height="match_parent"
             android:onClick="pressionarNumero"
             android:text="3" />
 
         <Button
             android:id="@+id/btnSubtracao"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/holo_blue_dark"
             android:onClick="pressionarOperacao"
             android:text="-" />
     </TableRow>
 
-    <TableRow>
+    <TableRow android:minHeight="75dp">
 
         <Button
-            android:id="@+id/btnVirgula"
+            android:id="@+id/btnPonto"
+            android:layout_height="match_parent"
             android:onClick="pressionarNumero"
-            android:text="," />
+            android:text="." />
 
         <Button
             android:id="@+id/btn0"
+            android:layout_height="match_parent"
             android:onClick="pressionarNumero"
             android:text="0" />
 
         <Button
             android:id="@+id/btnIgualdade"
+            android:layout_height="match_parent"
             android:onClick="calcular"
             android:text="=" />
 
         <Button
             android:id="@+id/btnSoma"
+            android:layout_height="match_parent"
+            android:backgroundTint="@android:color/holo_blue_dark"
             android:onClick="pressionarOperacao"
             android:text="+" />
     </TableRow>
