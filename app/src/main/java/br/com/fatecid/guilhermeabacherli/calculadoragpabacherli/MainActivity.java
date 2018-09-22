@@ -21,12 +21,14 @@ public class MainActivity extends Activity {
     public void pressionarNumero(View v) {
         Button botaoPressionado = (Button) findViewById(v.getId());
         TextView resultado = (TextView) findViewById(R.id.txtResultado);
-        String txtNumero = botaoPressionado.getText().toString();
-        String txtConcatenar = resultado.getText().toString();
-        if (txtNumero.contains(".") && resultado.getText().toString().isEmpty()) {
-            Toast.makeText(this, "Digite um número antes!", Toast.LENGTH_LONG).show();
+        String txtPressionado = botaoPressionado.getText().toString();
+        String txtResultado = resultado.getText().toString();
+        if (txtPressionado.contains(".") && resultado.getText().toString().isEmpty()) {
+            Toast.makeText(this, "Digite um número antes!", Toast.LENGTH_SHORT).show();
+        } else if (txtPressionado.contains(".") && txtResultado.contains(".")) {
+            Toast.makeText(this, "Ponto já foi digitado!", Toast.LENGTH_SHORT).show();
         } else {
-            resultado.setText(txtConcatenar + txtNumero);
+            resultado.setText(txtResultado + txtPressionado);
         }
     }
 
