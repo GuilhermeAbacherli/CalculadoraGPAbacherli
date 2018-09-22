@@ -8,30 +8,46 @@
 
     <TableRow>
 
-        <TextView android:id="@+id/txtOperacao" />
+        <TextView
+            android:id="@+id/txtOperacao"
+            android:height="50dp" />
     </TableRow>
 
     <TableRow>
 
-        <TextView android:id="@+id/txtResultado" />
+        <TextView
+            android:id="@+id/txtResultado"
+            android:height="100dp" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/btnLimpar"
+            android:layout_height="match_parent"
+            android:text="Limpar" />
     </TableRow>
 
     <TableRow>
 
         <Button
             android:id="@+id/btn7"
+            android:onClick="pressionarNumero"
             android:text="7" />
 
         <Button
             android:id="@+id/btn8"
+            android:onClick="pressionarNumero"
             android:text="8" />
 
         <Button
             android:id="@+id/btn9"
+            android:onClick="pressionarNumero"
             android:text="9" />
 
         <Button
             android:id="@+id/btnDivisao"
+            android:onClick="pressionarOperacao"
             android:text="/" />
     </TableRow>
 
@@ -39,37 +55,45 @@
 
         <Button
             android:id="@+id/btn4"
+            android:onClick="pressionarNumero"
             android:text="4" />
 
         <Button
             android:id="@+id/btn5"
+            android:onClick="pressionarNumero"
             android:text="5" />
 
         <Button
             android:id="@+id/btn6"
+            android:onClick="pressionarNumero"
             android:text="6" />
 
         <Button
             android:id="@+id/btnMultiplicacao"
-            android:text="X" />
+            android:onClick="pressionarOperacao"
+            android:text="*" />
     </TableRow>
 
     <TableRow>
 
         <Button
             android:id="@+id/btn1"
+            android:onClick="pressionarNumero"
             android:text="1" />
 
         <Button
             android:id="@+id/btn2"
+            android:onClick="pressionarNumero"
             android:text="2" />
 
         <Button
             android:id="@+id/btn3"
+            android:onClick="pressionarNumero"
             android:text="3" />
 
         <Button
             android:id="@+id/btnSubtracao"
+            android:onClick="pressionarOperacao"
             android:text="-" />
     </TableRow>
 
@@ -77,18 +101,22 @@
 
         <Button
             android:id="@+id/btnVirgula"
+            android:onClick="pressionarNumero"
             android:text="," />
 
         <Button
             android:id="@+id/btn0"
+            android:onClick="pressionarNumero"
             android:text="0" />
 
         <Button
             android:id="@+id/btnIgualdade"
+            android:onClick="calcular"
             android:text="=" />
 
         <Button
             android:id="@+id/btnSoma"
+            android:onClick="pressionarOperacao"
             android:text="+" />
     </TableRow>
 
